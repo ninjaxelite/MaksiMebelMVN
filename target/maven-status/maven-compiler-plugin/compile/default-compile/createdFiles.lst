@@ -1,2 +1,3 @@
 com\maksimebel\mvn\entity\Book.class
 com\maksimebel\mvn\MainController.class
+com\maksimebel\mvn\http\HttpRequestHandler.class

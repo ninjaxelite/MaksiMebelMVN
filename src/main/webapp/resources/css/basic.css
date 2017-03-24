@@ -1,0 +1,210 @@
+/* 
+    Created on : 17.03.2017, 17:00:34
+    Author     : Magamet
+*/
+
+.header {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #0098d6; 
+    margin-left: 500px;
+}
+.body-style {
+    padding: 0;
+    margin: 0;
+}
+.slider {
+    position: relative;
+    height: 50px;
+    margin: 0 auto;
+}
+.img-container {
+    text-align:center;
+}
+.img-container img {
+    width:100%;
+}
+.search-container {
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    margin-top: -50px;
+    background-color: #0098d6;
+    border-radius: 0 0 4px 4px;
+    padding: 10px 30px 26px;
+}
+.ui-selectoneradio label {
+    margin-left: 8px;
+}
+.pass-container {
+    border-color: #dadada;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    width: auto;
+    position: relative;
+    display: inline-block;
+    height: 42px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+.passenger-style {
+    background-color: #64c8f5;
+    border-radius: 50%;
+    padding: 8px;
+    width: 10px;
+    margin: 8px;
+}
+.pass-font {
+    color: #ffffff; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 13px; 
+    font-weight: 500;
+    margin: 0 0 72px; 
+    text-align: center;
+}
+.val-pass-foto {
+    float: left;
+    margin-right: 3px;
+    margin-left: 10px;
+    margin-top: 14px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+.ui-selectoneradio.ui-widget td:nth-child(3) {
+    padding-left: 25px;
+}
+.ui-widget .ui-widget {
+    background-color: #0098d6;
+    margin-top: 5px;
+}
+.ui-radiobutton {
+    display: block !important;
+}
+.ui-radiobutton .ui-radiobutton-box {
+    border-style: solid;
+    border-width: 1px;
+}
+.select-trip {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 14px; 
+    font-weight: 500;
+    text-align: center;   
+    margin-left: 7px;
+    padding-bottom: 10px;
+}
+.ui-state-active .ui-icon {
+    display: table;
+    border-style: solid;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.curr-button {
+    position: absolute;
+    display: inline-table;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #e8e7e7;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 42px;
+    margin-top: 20px;
+    margin-right: 9px;
+    padding-right: 33px;
+    cursor: pointer;
+}
+.commandlink {
+    padding-bottom: 31px;
+    padding-top: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.curr-text {
+    position: absolute;
+    display: inline-table;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin-top: 10px !important;
+    cursor: pointer;
+}
+.graphic-style {
+    position: absolute;
+    display: inline-table;
+    margin-left: 28px;
+    margin-top: 18px;
+    width: 8px;
+}
+.submit-button {
+    font-family: 'Open Sans', sans-serif; 
+    margin-left: 90px;
+    height: 42px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 40px;
+    margin-top: 20px;
+    color: #0098d6;
+    font-weight: 700;
+}
+.ui-button-text-only .ui-button-text {
+    padding-left: 65px !important;
+    padding-right: 65px !important;
+}
+.ui-menu.ui-menu-dynamic {
+    background-color: #ffffff;
+    color: #0098d6;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #ffffff;
+}
+.ui-menu .ui-menuitem {
+    background-color: #ffffff;
+}
+.ui-menu .ui-menuitem-link {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500 !important;
+    font-size: 13px;
+    color: #0098d6;
+}
+.ui-datepicker {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500 !important;
+    font-size: 13px;
+    background-color: #ffffff;
+    color: #0098d6;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #ffffff;
+}
+.ui-datepicker td a {
+    color: #0098d6;
+}
+.ui-shadow {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+.ui-inputfield {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500 !important;
+    font-size: 14px;
+    background-color: #0098d6;
+    color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    margin-right: 15px !important;
+    height: 25px;
+    padding-left: 15px !important;
+    width: 132px;
+}

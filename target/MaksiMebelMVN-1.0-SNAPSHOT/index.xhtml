@@ -4,28 +4,105 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Arsaev Airlines Ltd.</title>
+        <h:outputStylesheet library="css" name="basic.css" />
     </h:head>
-    <h:body>
-        <h2>Maksi Mebel Ltd.</h2>
-        <br />
-        <h:form>
-            <p:dataTable value="#{mCon.books}" var="b">
-                <p:column headerText="Name">
-                    <p:outputLabel value="#{b.name}"/>
-                </p:column>
-                <p:column headerText="Publisher">
-                    <p:outputLabel value="#{b.publisher}" />
-                </p:column>
-                <p:column headerText="Price">
-                    <p:outputLabel value="#{b.price}" >
-                        <f:convertNumber pattern="#0.00" locale="deDE"/>
-                    </p:outputLabel>
-                </p:column>
-            </p:dataTable>
-            <p:growl id="growl" life="2000" />
-            <p:commandButton value="Ajax Submit" id="ajax" update="growl" actionListener="#{mCon.buttonAction}" styleClass="ui-priority-primary" />
-        </h:form>
+    <h:body class="body-style">
+        <p class="header" style="font-style: oblique;">Arsaev</p>
+        <p class="header" style="position: absolute;position: relative;margin-left: 615px;margin-top: -47px;"> Airlines</p>
+        <div>
+            <h:form id="mainForm">
+                <p:growl id="messages" showDetail="false"/>
+                <div class="slider">
+                    <div class="img-container">
+                        <p:graphicImage url="resources/img/plane1.png" />
+                    </div>
+                </div>
+                <div class="search-container">
+                    <p:selectOneRadio id="oneway" styleClass="select-trip" value="#{mCon.oneWayOrNot}">
+                        <f:selectItem class="selected-radio" itemLabel="ROUND TRIP" itemValue="#{false}" />
+                        <f:selectItem itemLabel="ONE WAY" itemValue="#{true}" />
+                    </p:selectOneRadio>
+
+                    <f:metadata>
+                        <f:viewAction action="#{mCon.checkPageReload}" onPostback="true" />
+                    </f:metadata>
+
+                    <!-- origin airport -->
+                    <p:inputText id="orgButton"  value="#{mCon.originPort}" style="width: 235px;margin-left: 7px;" >
+                        <p:ajax update="mainForm:menuOrg" listener="#{mCon.showMenu}" event="click" />
+                    </p:inputText>
+                    <p:menu id="menuOrg" style="margin-left: 538px;margin-top: -88px;#{mCon.menuOrg}" overlay="true" triggerEvent="click" trigger="orgButton" my="left top" at="left bottom" model="#{mCon.availableCitiesModel}" />
+
+                    <!-- destination airport -->
+                    <p:inputText id="destButton" value="#{mCon.destinationPort}" style="width: 225px;" />
+                    <p:menu overlay="true" trigger="destButton" my="left top" at="left bottom" model="#{mCon.destCitiesModel}"/>
+
+                    <!-- date selection -->
+                    <p:calendar id="dateFrom" value="#{mCon.dateFrom}" style="width: 130px;" />
+                    <p:calendar id="dateTo" value="#{mCon.dateTo}" style="width: 130px;" />
+
+                    <br/>
+
+                    <!-- select Adult -->
+                    <div class="pass-container" style="margin-left: 7px;">
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" style="float: left" url="resources/icon/minus_128.png" />
+                        </p:commandLink>
+                        <div style="float: left;margin-top: 2px;">
+                            <p:outputLabel styleClass="pass-font" value="Adult"/><br/>
+                            <p:outputLabel styleClass="pass-font" style="font-size: 12px;color: #c4d2f3" value="&gt; 12 years"/>
+                        </div>
+                        <p:outputLabel styleClass="pass-font val-pass-foto" value="0" />
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" url="resources/icon/plus_128.png" />
+                        </p:commandLink>
+                    </div>
+
+                    <!-- select Child -->
+                    <div class="pass-container">
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" style="float: left" url="resources/icon/minus_128.png" />
+                        </p:commandLink>
+                        <div style="float: left;margin-top: 2px;">
+                            <p:outputLabel styleClass="pass-font" value="Child"/><br/>
+                            <p:outputLabel styleClass="pass-font" style="font-size: 12px;color: #c4d2f3" value="2-12 years"/>
+                        </div>
+                        <p:outputLabel styleClass="pass-font val-pass-foto" value="0" />
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" url="resources/icon/plus_128.png" />
+                        </p:commandLink>
+                    </div>
+
+                    <!-- select Infant -->
+                    <div class="pass-container">
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" style="float: left" url="resources/icon/minus_128.png" />
+                        </p:commandLink>
+                        <div style="float: left;margin-top: 2px;">
+                            <p:outputLabel styleClass="pass-font" value="Infant"/><br/>
+                            <p:outputLabel styleClass="pass-font" style="font-size: 12px;color: #c4d2f3" value="&lt; 2 years"/>
+                        </div>
+                        <p:outputLabel styleClass="pass-font val-pass-foto" value="0" />
+                        <p:commandLink>
+                            <p:graphicImage styleClass="passenger-style" url="resources/icon/plus_128.png" />
+                        </p:commandLink>
+                    </div>
+
+                    <div class="curr-button">
+                        <p:commandLink id="currency" styleClass="commandlink">
+                            <p:outputLabel value="€" styleClass="curr-text" />
+                            <p:graphicImage url="resources/icon/icon_arrow_select.png" styleClass="graphic-style"/>
+                        </p:commandLink>
+                    </div>
+                    <p:menu overlay="true" trigger="currency" my="left top" at="left bottom" model="#{mCon.currencyModel}"/>
+
+                    <p:commandButton value="FIND FLIGHTS" id="ajax" update="messages"
+                                     actionListener="#{mCon.buttonAction}"
+                                     styleClass="ui-priority-primary submit-button" />
+                </div>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
