@@ -11,7 +11,7 @@
     font-weight: 400;
     line-height: 20px;
     color: #0098d6; 
-    margin-left: 500px;
+    margin-left: -450px;
 }
 .body-style {
     padding: 0;
@@ -131,7 +131,7 @@
     position: absolute;
     display: inline-table;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     margin-top: 10px !important;
@@ -207,4 +207,24 @@
     height: 25px;
     padding-left: 15px !important;
     width: 132px;
+}
+.flight-f {
+    font-family: 'Open Sans', sans-serif; 
+    display: table;
+    position: absolute;
+    margin-left: -440px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1b31a2;
+}
+.flight-plan.ui-panelgrid>*>tr,
+.flight-plan.ui-panelgrid .ui-panelgrid-cell {
+    border: none;
+}
+.font-f {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500;
+    font-size: 13px;
+    color: #0098d6;
 }
